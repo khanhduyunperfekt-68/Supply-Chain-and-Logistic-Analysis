@@ -7,7 +7,7 @@ Rather than reporting isolated KPIs, the analysis is structured to identify syst
 
 By combining descriptive analytics, risk diagnostics, and forward-looking demand signals, the project demonstrates how supply chain performance can be improved through targeted actions, not blanket inventory expansion—balancing service level, working capital efficiency, and operational resilience.
 
-![Project overview](./docs/porfolio_intro.png)
+![Project overview](./docs/porfolio_intro.png) 
 
 # Project overview :
 
