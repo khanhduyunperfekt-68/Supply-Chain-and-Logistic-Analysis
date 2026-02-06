@@ -4,7 +4,7 @@
 Supply Chain & Inventory Risk Analysis – From Data to Decisions
 
 Project overview :
-![Portfolio Intro](https://raw.githubusercontent.com/khanhduyunperfekt-68/supply-chain-logistic-analysis/main/docs/Porfoliointro.png)
+- [View the 1-slide case study](docs/Porfolio intro.png)
 
 
 # Project objective
