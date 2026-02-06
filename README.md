@@ -56,6 +56,7 @@ Statistical testing in JASP to validate hypotheses
 
 Consulting-style storyline suitable for decision-makers and interviews
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Below is the structured problem-solving analysis, presented across four logical steps:
 Problem framing → Diagnostic approach → Key insights → So what & actions
 
@@ -135,6 +136,7 @@ Supplier contribution is highly concentrated, amplifying operational risk when t
 
 Inventory risk is unevenly distributed, with a small subset of items driving the majority of low-inventory exposure.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Statistical Insights & Actionable Recommendations
 
 ![Descriptive](./screenshots/descriptive.png) 
@@ -144,16 +146,34 @@ Inventory risk is unevenly distributed, with a small subset of items driving the
 ![Boxplot Overview](./screenshots/box_plot.png)
 
 * Insight
-Inventory (BeginOnHand) and Sales distributions are highly right-skewed, with extreme outliers dominating total volume. Median values remain low while maximum values are disproportionately large.
+
+Inventory and sales distributions are extremely right-skewed, indicating that a small fraction of SKUs drives a disproportionate share of volume.
+
+* Evidence
+
+- BeginOnHand
+Median: 9 units
+Mean: 30 units
+Max: 467,200 units
+Skewness: 173.2
+
+- Sales
+Median: $71.97
+Mean: $218.8
+Max: $20,410
+Skewness: 12.29
 
 * So what
-Average-based planning does not reflect typical operational behavior and increases the risk of systematic overstocking across the portfolio.
+
+Using averages to plan inventory will systematically overestimate required stock for most SKUs while failing to control risk for high-impact items.
 
 * Action
 
-Segment SKUs based on distribution percentiles rather than mean values
+- Classify SKUs into long-tail vs high-impact groups using percentiles
 
-Apply risk-tier inventory thresholds (e.g. P75 / P90) for high-impact items
+- Define inventory targets using P75 / P90 thresholds, not mean
+
+- Apply tighter monitoring to the top 5–10% SKUs contributing the majority of stock and sales
 
 ## 2. Purchase–Sales Relationship
 
@@ -162,46 +182,113 @@ Apply risk-tier inventory thresholds (e.g. P75 / P90) for high-impact items
 ![Correlation](./screenshots/t_test.png)
 
 * Insight
-Purchases and Sales show a very strong positive correlation (Pearson r = 0.88, p < 0.001).
+
+Purchases and sales are strongly and linearly coupled, indicating reactive procurement behavior.
+
+* Evidence
+
+Pearson correlation: r = 0.88
+Statistical significance: p < 0.001
+95% CI: [0.877, 0.882]
 
 * So what
-Procurement decisions are largely reactive, following realized sales instead of anticipating demand, increasing exposure to volatility and bullwhip effects.
+
+Procurement volume closely follows realized sales, which amplifies demand shocks and increases inventory volatility during peak periods.
 
 * Action
 
-Shift from sales-driven purchasing to forecast-led replenishment
+- Decouple purchasing decisions from realized sales
 
-Use demand signals as leading indicators, not lagging outcomes
+- Use forecasted demand as the primary trigger for replenishment
 
+- Introduce demand smoothing (e.g. rolling averages or forecast bands)
+- 
 ## 3. Inventory Structure – Clustering Analysis
 
 ![Clustering](./screenshots/clustering.png)
 
 * Insight
-Model-based clustering identifies multiple inventory behavior patterns, but with low silhouette scores, indicating overlapping and heterogeneous SKU behavior.
+
+Inventory behavior is highly heterogeneous and cannot be explained by a small number of clean segments.
+
+* Evidence
+
+Model-based clustering selected 10 clusters (BIC optimized)
+Silhouette score: 0.15 (low separation)
+Large variance in cluster sizes (from 242 to 8,031 records)
+
+* What this actually means (plain language)
+
+SKUs do not fall into neat, well-separated groups.
+Instead, inventory behavior varies along multiple dimensions at once (volume, turnover, volatility).
 
 * So what
-A single inventory policy cannot effectively manage the portfolio. Uniform rules increase both stockout risk and capital inefficiency.
+
+- Applying a single replenishment rule across all SKUs will either:
+
+- Overprotect low-risk items, or
+
+- Under-protect volatile, high-risk items
 
 * Action
 
-Combine analytical clustering with business segmentation logic
+- Replace pure clustering with a rule-based segmentation:
 
-Apply differentiated replenishment strategies by volatility and turnover
+- Segment by Sales Volume × Inventory Volatility
+
+** Example:
+
+High sales / high volatility → frequent review, lower safety stock buffer
+
+Low sales / low volatility → relaxed replenishment cycles
+
+Use clustering as a diagnostic tool, not as the final decision rule
 
 ## 4. Sales Drivers – Regression Analysis
 
 ![Linear Regression](./screenshots/linear_regression.png)
 
 * Insight
-The regression model explains a substantial portion of sales variance (R² = 0.79).
-Purchasing volume is the strongest positive driver, while high ending inventory shows a negative marginal impact on sales.
+
+Sales performance is driven by flow efficiency, not by holding larger inventories.
+
+* Evidence
+
+Model explanatory power: R² = 0.786
+Key coefficients (standardized):
+Purchases → Sales: β = 0.856 (p < .001)
+BeginOnHand → Sales: β = 0.131 (p < .001)
+EndOnHand → Sales: β = -0.066 (p < .001)
 
 * So what
-Sales growth is driven by inventory flow efficiency, not inventory accumulation. Excess stock does not translate into higher revenue.
+
+Purchasing activity supports sales, but excess ending inventory reduces marginal sales impact, increasing holding costs without revenue upside.
 
 * Action
 
-Introduce upper-bound inventory constraints for low-elasticity items
+- Define upper inventory bounds for slow-moving SKUs
 
-Optimize for inventory turnover, not stock size
+- Shift KPIs from “stock level” to inventory turnover and flow rate
+
+- Flag SKUs with rising EndOnHand but stagnant sales for markdown or delisting review
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Executive Recommendation Summary
+
+## Key conclusion
+Supply chain inefficiencies are structural, not volume-related.
+
+## What to change
+
+* From average-based planning → distribution-aware planning
+
+* From reactive purchasing → forecast-led replenishment
+
+* From uniform inventory rules → risk-segmented control
+
+## Expected impact
+
+* Reduced inventory volatility
+
+* Lower capital tied in excess stock
+
+* Improved service stability under demand shocks
