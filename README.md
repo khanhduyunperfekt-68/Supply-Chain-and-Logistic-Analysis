@@ -4,7 +4,7 @@
 Supply Chain & Inventory Risk Analysis – From Data to Decisions
 
 Project overview :
-- [View the 1-slide case study](docs/Porfolio intro.png)
+- [View the 1-slide case study](docs/Porfolio intro.pdf)
 
 
 # Project objective
