@@ -6,13 +6,13 @@ Supply Chain & Inventory Risk Analysis – From Data to Decisions
 Project overview :
 - [View the 1-slide case study](docs/Porfolio intro.pdf)
 
-![Overview](screenshots/Overview.png)
+![Purchase & Supplier Analysis](./screenshots/Purchase%20%26%20Supplier%20Analysis.png)
 
-![Purchase & Supplier Analysis](screenshots/Purchase%20%26%20Supplier%20Analysis.png)
+![Risk Analytics](./screenshots/Riskanalytic.png)
 
-![Risk Analytics](screenshots/Risk%20analytic.png)
+![Forecast the Trend](./screenshots/Forecast%20the%20trend.png)
 
-![Forecast the Trend](screenshots/Forecast%20the%20trend.png)
+![Portfolio Intro](./screenshots/Porfolio%20intro.png)
 # Project objective
 
 This project explores how operational supply chain data can be transformed into risk-focused insights rather than descriptive reporting.
