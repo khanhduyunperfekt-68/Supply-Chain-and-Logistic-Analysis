@@ -120,9 +120,6 @@ Broad inventory increases would be inefficient. The highest return comes from ad
 A risk-based inventory strategy—prioritizing high-variance, low-buffer items—can significantly reduce stockout exposure without increasing overall inventory levels.
 
 
-
-
-
 # Strategic Summary – Supply Chain & Inventory
 The situation
 
@@ -138,20 +135,73 @@ Supplier contribution is highly concentrated, amplifying operational risk when t
 
 Inventory risk is unevenly distributed, with a small subset of items driving the majority of low-inventory exposure.
 
-Strategic implication
+# Statistical Insights & Actionable Recommendations
 
-Broad inventory expansion would increase working capital without addressing root causes. The supply chain requires a risk-based, forecast-informed operating model, not a volume-based one.
+![Descriptive](./screenshots/descriptive.png) 
 
-# Recommended strategic direction
+## 1. Distribution & Outliers – Inventory and Sales
 
-Shift from static reorder points to dynamic, forecast-driven replenishment thresholds
+![Boxplot Overview](./screenshots/box_plot.png)
 
-Prioritize high-variance, low-buffer items rather than managing the portfolio uniformly
+Insight
+Inventory (BeginOnHand) and Sales distributions are highly right-skewed, with extreme outliers dominating total volume. Median values remain low while maximum values are disproportionately large.
 
-Balance supplier efficiency with resilience considerations, reducing dependency risk
+So what
+Average-based planning does not reflect typical operational behavior and increases the risk of systematic overstocking across the portfolio.
 
-Use inventory variance and low-stock indicators as early-warning signals, not lagging metrics
+Action
 
-# Expected impact
+Segment SKUs based on distribution percentiles rather than mean values
 
-A targeted approach enables meaningful reduction in low-inventory exposure while preserving capital efficiency, improving supply chain stability without inflating overall stock levels.
+Apply risk-tier inventory thresholds (e.g. P75 / P90) for high-impact items
+
+## 2. Purchase–Sales Relationship
+
+![Correlation](./screenshots/correlation.png)
+
+![Correlation](./screenshots/t_test.png)
+
+Insight
+Purchases and Sales show a very strong positive correlation (Pearson r = 0.88, p < 0.001).
+
+So what
+Procurement decisions are largely reactive, following realized sales instead of anticipating demand, increasing exposure to volatility and bullwhip effects.
+
+Action
+
+Shift from sales-driven purchasing to forecast-led replenishment
+
+Use demand signals as leading indicators, not lagging outcomes
+
+## 3. Inventory Structure – Clustering Analysis
+
+![Clustering](./screenshots/clustering.png)
+
+Insight
+Model-based clustering identifies multiple inventory behavior patterns, but with low silhouette scores, indicating overlapping and heterogeneous SKU behavior.
+
+So what
+A single inventory policy cannot effectively manage the portfolio. Uniform rules increase both stockout risk and capital inefficiency.
+
+Action
+
+Combine analytical clustering with business segmentation logic
+
+Apply differentiated replenishment strategies by volatility and turnover
+
+## 4. Sales Drivers – Regression Analysis
+
+![Linear Regression](./screenshots/linear_regression.png)
+
+Insight
+The regression model explains a substantial portion of sales variance (R² = 0.79).
+Purchasing volume is the strongest positive driver, while high ending inventory shows a negative marginal impact on sales.
+
+So what
+Sales growth is driven by inventory flow efficiency, not inventory accumulation. Excess stock does not translate into higher revenue.
+
+Action
+
+Introduce upper-bound inventory constraints for low-elasticity items
+
+Optimize for inventory turnover, not stock size
