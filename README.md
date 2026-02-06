@@ -1,10 +1,11 @@
 # Supply-Chain-and-Logistic-Analysis
-📦 Project Overview
+# Project Overview
 
 Supply Chain & Inventory Risk Analysis – From Data to Decisions
 
-🔗 Dashboard (Power BI):
-[Insert Power BI dashboard link here]
+Project overview :
+![Portfolio Intro](https://raw.githubusercontent.com/USERNAME/supply-chain-logistic-analysis/main/screenshots/Porfolio%20intro.png)
+
 
 # Project objective
 
