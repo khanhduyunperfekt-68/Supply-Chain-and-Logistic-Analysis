@@ -6,7 +6,7 @@ Supply Chain & Inventory Risk Analysis – From Data to Decisions
 Project overview :
 - [View the 1-slide case study](docs/Porfolio intro.pdf)
 
-![Purchase & Supplier Analysis](./screenshots/Purchase%20%26%20Supplier%20Analysis.png)
+![Purchase & Supplier Analysis](./screenshots/purchase_supplier_analysis.png)
 
 ![Risk Analytics](./screenshots/Riskanalytic.png)
 
