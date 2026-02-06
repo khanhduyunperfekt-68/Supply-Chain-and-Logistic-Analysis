@@ -1,22 +1,27 @@
 # Supply-Chain-and-Logistic-Analysis
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Project Overview
 
-Supply Chain & Inventory Risk Analysis – From Data to Decisions
+This project presents an end-to-end analytical assessment of a supply chain and logistics operation, focusing on how purchasing behavior, inventory dynamics, and demand volatility interact to drive financial and operational outcomes.
+Rather than reporting isolated KPIs, the analysis is structured to identify systemic inefficiencies, inventory risk concentrations, and decision points where data-driven intervention creates the highest impact.
 
-![Project overview](./docs/overview.png)
-Project overview :
+By combining descriptive analytics, risk diagnostics, and forward-looking demand signals, the project demonstrates how supply chain performance can be improved through targeted actions, not blanket inventory expansion—balancing service level, working capital efficiency, and operational resilience.
 
-![Overview](./screenshots/overview.png)
+![Project overview](./docs/porfolio_intro.png)
+
+# Project overview :
+
 ## Overview: the actual situation of the business.
+![Overview](./screenshots/overview.png)
 
-![Purchase & Supplier Analysis](./screenshots/purchase_supplier_analysis.png)
 ## Purchase & Supplier Analysis: What is the situation regarding suppliers, and which ones are performing effectively.
+![Purchase & Supplier Analysis](./screenshots/purchase_supplier_analysis.png)
 
-![Risk Analytics](./screenshots/risk_analytic.png)
 ## Risk Analytics: risks in warehouses
+![Risk Analytics](./screenshots/risk_analytic.png)
 
-![Forecast the Trend](./screenshots/forecast_trend.png)
 ## Forecast the Trend: Forecasting commodity trends to make import decisions.
+![Forecast the Trend](./screenshots/forecast_trend.png)
 
 # Project objective
 
