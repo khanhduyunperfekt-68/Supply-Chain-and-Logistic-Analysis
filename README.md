@@ -143,13 +143,13 @@ Inventory risk is unevenly distributed, with a small subset of items driving the
 
 ![Boxplot Overview](./screenshots/box_plot.png)
 
-Insight
+* Insight
 Inventory (BeginOnHand) and Sales distributions are highly right-skewed, with extreme outliers dominating total volume. Median values remain low while maximum values are disproportionately large.
 
-So what
+* So what
 Average-based planning does not reflect typical operational behavior and increases the risk of systematic overstocking across the portfolio.
 
-Action
+* Action
 
 Segment SKUs based on distribution percentiles rather than mean values
 
@@ -161,13 +161,13 @@ Apply risk-tier inventory thresholds (e.g. P75 / P90) for high-impact items
 
 ![Correlation](./screenshots/t_test.png)
 
-Insight
+* Insight
 Purchases and Sales show a very strong positive correlation (Pearson r = 0.88, p < 0.001).
 
-So what
+* So what
 Procurement decisions are largely reactive, following realized sales instead of anticipating demand, increasing exposure to volatility and bullwhip effects.
 
-Action
+* Action
 
 Shift from sales-driven purchasing to forecast-led replenishment
 
@@ -177,13 +177,13 @@ Use demand signals as leading indicators, not lagging outcomes
 
 ![Clustering](./screenshots/clustering.png)
 
-Insight
+* Insight
 Model-based clustering identifies multiple inventory behavior patterns, but with low silhouette scores, indicating overlapping and heterogeneous SKU behavior.
 
-So what
+* So what
 A single inventory policy cannot effectively manage the portfolio. Uniform rules increase both stockout risk and capital inefficiency.
 
-Action
+* Action
 
 Combine analytical clustering with business segmentation logic
 
@@ -193,14 +193,14 @@ Apply differentiated replenishment strategies by volatility and turnover
 
 ![Linear Regression](./screenshots/linear_regression.png)
 
-Insight
+* Insight
 The regression model explains a substantial portion of sales variance (R² = 0.79).
 Purchasing volume is the strongest positive driver, while high ending inventory shows a negative marginal impact on sales.
 
-So what
+* So what
 Sales growth is driven by inventory flow efficiency, not inventory accumulation. Excess stock does not translate into higher revenue.
 
-Action
+* Action
 
 Introduce upper-bound inventory constraints for low-elasticity items
 
