@@ -169,11 +169,11 @@ Using averages to plan inventory will systematically overestimate required stock
 
 * Action
 
-- Classify SKUs into long-tail vs high-impact groups using percentiles
+ Classify SKUs into long-tail vs high-impact groups using percentiles
 
-- Define inventory targets using P75 / P90 thresholds, not mean
+ Define inventory targets using P75 / P90 thresholds, not mean
 
-- Apply tighter monitoring to the top 5–10% SKUs contributing the majority of stock and sales
+ Apply tighter monitoring to the top 5–10% SKUs contributing the majority of stock and sales
 
 ## 2. Purchase–Sales Relationship
 
@@ -197,12 +197,12 @@ Procurement volume closely follows realized sales, which amplifies demand shocks
 
 * Action
 
-- Decouple purchasing decisions from realized sales
+ Decouple purchasing decisions from realized sales
 
-- Use forecasted demand as the primary trigger for replenishment
+ Use forecasted demand as the primary trigger for replenishment
 
-- Introduce demand smoothing (e.g. rolling averages or forecast bands)
-- 
+ Introduce demand smoothing (e.g. rolling averages or forecast bands)
+
 ## 3. Inventory Structure – Clustering Analysis
 
 ![Clustering](./screenshots/clustering.png)
@@ -224,17 +224,17 @@ Instead, inventory behavior varies along multiple dimensions at once (volume, tu
 
 * So what
 
-- Applying a single replenishment rule across all SKUs will either:
+ Applying a single replenishment rule across all SKUs will either:
 
-- Overprotect low-risk items, or
+ Overprotect low-risk items, or
 
-- Under-protect volatile, high-risk items
+ Under-protect volatile, high-risk items
 
 * Action
 
-- Replace pure clustering with a rule-based segmentation:
+ Replace pure clustering with a rule-based segmentation:
 
-- Segment by Sales Volume × Inventory Volatility
+ Segment by Sales Volume × Inventory Volatility
 
 ** Example:
 
@@ -266,11 +266,12 @@ Purchasing activity supports sales, but excess ending inventory reduces marginal
 
 * Action
 
-- Define upper inventory bounds for slow-moving SKUs
+ Define upper inventory bounds for slow-moving SKUs
 
-- Shift KPIs from “stock level” to inventory turnover and flow rate
+ Shift KPIs from “stock level” to inventory turnover and flow rate
 
-- Flag SKUs with rising EndOnHand but stagnant sales for markdown or delisting review
+ Flag SKUs with rising EndOnHand but stagnant sales for markdown or delisting review
+ 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Executive Recommendation Summary
 
