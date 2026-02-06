@@ -3,15 +3,20 @@
 
 Supply Chain & Inventory Risk Analysis – From Data to Decisions
 
+![Project overview](./docs/overview.png)
 Project overview :
-- [View the 1-slide case study](docs/Porfolio intro.pdf)
+
 ![Overview](./screenshots/overview.png)
+## Overview: the actual situation of the business.
 
 ![Purchase & Supplier Analysis](./screenshots/purchase_supplier_analysis.png)
+## Purchase & Supplier Analysis: What is the situation regarding suppliers, and which ones are performing effectively.
 
 ![Risk Analytics](./screenshots/risk_analytic.png)
+## Risk Analytics: risks in warehouses
 
 ![Forecast the Trend](./screenshots/forecast_trend.png)
+## Forecast the Trend: Forecasting commodity trends to make import decisions.
 
 # Project objective
 
